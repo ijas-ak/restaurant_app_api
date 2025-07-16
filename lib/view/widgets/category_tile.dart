@@ -24,6 +24,7 @@ class CategoryTile extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.all(12),
                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white, width: 2),
                     color: Colors.grey.shade900,
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -47,7 +48,6 @@ class CategoryTile extends StatelessWidget {
                           ),
                         ),
                       ),
-
                       //food rating
                       SizedBox(height: 10),
                       RatingStars(

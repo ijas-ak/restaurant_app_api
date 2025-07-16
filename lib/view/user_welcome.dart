@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:rishal_ui/services/auth_provider.dart';
 
 class UserWelcome extends StatelessWidget {
   const UserWelcome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    context.read<MyProvider>().getData();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          "Hi,Rishal",
-          style: GoogleFonts.monda(fontSize: 32, fontWeight: FontWeight.bold),
+        Consumer<MyProvider>(
+          builder: (context, value, child) => Text(
+            "Hi, ${value.username}",
+            style: GoogleFonts.monda(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
         ),
         Stack(
           children: [
@@ -24,11 +29,13 @@ class UserWelcome extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 2),
               ),
               child: Center(
-                child: Text(
-                  'R',
-                  style: GoogleFonts.bebasNeue(
-                    fontSize: 35,
-                    color: Colors.black,
+                child: Consumer<MyProvider>(
+                  builder: (context, value, child) => Text(
+                    value.username[0],
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 35,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),

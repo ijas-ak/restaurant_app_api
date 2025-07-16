@@ -10,6 +10,7 @@ class PizzaTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<FoodProvider>(context, listen: false).addData();
+
     return Consumer<FoodProvider>(
       builder: (context, value, child) => GridView.builder(
         itemCount: value.menu.length,
@@ -22,6 +23,7 @@ class PizzaTile extends StatelessWidget {
           return Container(
             margin: EdgeInsets.all(12),
             decoration: BoxDecoration(
+              border: Border.all(color: Colors.white, width: 2),
               color: Colors.grey.shade900,
               borderRadius: BorderRadius.circular(12),
             ),
