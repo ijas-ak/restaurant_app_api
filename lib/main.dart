@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rishal_ui/controllers/provider.dart';
-import 'package:rishal_ui/services/auth_provider.dart';
+import 'package:rishal_ui/controllers/auth_provider.dart';
 import 'package:rishal_ui/view/auth_ui.dart';
 
 void main() {

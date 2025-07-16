@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rishal_ui/services/auth_provider.dart';
+import 'package:rishal_ui/controllers/auth_provider.dart';
 import 'package:rishal_ui/view/home_page.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
@@ -62,6 +62,7 @@ class AuthUi extends StatelessWidget {
                             userController.text,
                           );
                           context.read<MyProvider>().loginStatus();
+
                           await Future.delayed(Duration(seconds: 3));
                           Navigator.pushReplacement(
                             // ignore: use_build_context_synchronously
