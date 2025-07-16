@@ -34,13 +34,19 @@ class AuthUi extends StatelessWidget {
                   style: TextStyle(color: Colors.black),
                   controller: userController,
                   decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
+                      ),
+                    ),
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Enter Username",
                     hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
                   ),
                   validator: (value) {
                     if (value!.isNotEmpty) {
@@ -77,7 +83,7 @@ class AuthUi extends StatelessWidget {
                       },
                       child: Text("Sign In"),
                     )
-                  : CircularProgressIndicator(),
+                  : CircularProgressIndicator(color: Colors.black),
             ),
           ],
         ),
